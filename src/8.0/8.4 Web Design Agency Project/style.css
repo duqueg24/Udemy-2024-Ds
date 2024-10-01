@@ -1,0 +1,69 @@
+body {
+  font-family: "Poppins", sans-serif; /* Aplica la fuente 'Poppins' para todo el contenido del sitio. Si no está disponible, usa una fuente genérica sans-serif. Esto se refleja en los textos del encabezado, párrafos, etc. */
+  margin: 50px 50px 0 50px; /* Establece un margen de 50px en los lados izquierdo, derecho y superior del cuerpo, dejando espacio alrededor del contenido principal. No se aplica margen inferior para permitir un ajuste natural del contenido según la altura del contenido. */
+  background-color: #faf9f6; /* Define un color de fondo claro y suave (#faf9f6), que proporciona un contraste limpio y neutral para el contenido visual y textual. */
+  display: flex; /* Utiliza el modelo de caja flexible para alinear y distribuir los elementos dentro del cuerpo, principalmente la clase '.main'. */
+  flex-direction: column; /* Organiza los elementos hijos del cuerpo (como '.main') en una columna vertical, posicionando el contenido desde arriba hacia abajo. */
+  min-height: 95vh; /* Define que la altura mínima del cuerpo sea el 95% de la altura de la ventana, asegurando que el contenido ocupe casi toda la pantalla, incluso si el contenido es corto. */
+}
+
+.main {
+  flex: 1; /* Hace que el contenedor '.main', que incluye el logo, encabezado y tarjetas, ocupe todo el espacio disponible restante del cuerpo, empujando el pie de página hacia el fondo. */
+}
+
+h1 {
+  font-size: 5rem; /* Establece el tamaño del título principal (h1) en un tamaño grande (5rem), dándole presencia y jerarquía visual en la página, captando la atención del usuario. */
+}
+
+footer {
+  text-align: right; /* Alinea el texto dentro del pie de página a la derecha, asegurando que el texto 'Create. Develop. Design.' esté en esa posición. */
+  color: midnightblue; /* Aplica un color azul oscuro (midnightblue) al texto del pie de página para darle contraste y elegancia sobre el fondo claro. */
+}
+
+.tile-image {
+  height: 200px; /* Establece una altura fija de 200px para las imágenes dentro de las tarjetas ('Beauty' y 'Construction'), asegurando uniformidad en su tamaño. */
+  float: left; /* Hace que las imágenes floten a la izquierda, permitiendo que el texto a la derecha de la imagen las envuelva. */
+  margin-right: 50px; /* Añade un margen a la derecha de la imagen, creando espacio entre la imagen y el texto de la tarjeta para mejorar la legibilidad y el diseño. */
+}
+
+.card {
+  width: 45%; /* Las tarjetas que contienen el contenido de 'Beauty' y 'Construction' ocupan el 45% del ancho del contenedor '.main', dándoles espacio suficiente sin desbordar. */
+}
+
+.left {
+  float: left; /* Asegura que la tarjeta 'Beauty' flote a la izquierda dentro del contenedor principal '.main', permitiendo un diseño en el que las tarjetas queden alineadas una al lado de la otra. */
+}
+
+.right {
+  float: right; /* Hace que la tarjeta 'Construction' flote a la derecha del contenedor principal '.main', completando el diseño en dos columnas. */
+}
+
+.creative {
+  color: midnightblue; /* Establece el color del texto con la clase '.creative' (aunque no se utiliza en el HTML proporcionado) como midnightblue, para mantener consistencia con el pie de página. */
+}
+
+@media (max-width: 680px) {
+  /* Establece estilos específicos para pantallas con un ancho máximo de 680px (dispositivos móviles o pantallas pequeñas), haciendo que el diseño sea más flexible y fácil de usar. */
+  .logo {
+    width: 100px; /* Reduce el tamaño del logo a 100px de ancho en pantallas pequeñas para evitar que ocupe demasiado espacio en la vista móvil. */
+  }
+
+  h1 {
+    font-size: 3.5rem; /* Disminuye el tamaño del encabezado (h1) para adaptarse mejor a pantallas más pequeñas, sin perder su impacto visual. */
+    text-align: center; /* Centra el texto del encabezado en pantallas pequeñas para una mejor presentación en formato móvil. */
+  }
+
+  .card {
+    width: 100%; /* Hace que las tarjetas ocupen el 100% del ancho en pantallas pequeñas, permitiendo que se apilen en lugar de estar una al lado de la otra. */
+    display: block; /* Asegura que las tarjetas se comporten como bloques en pantallas pequeñas, tomando cada una su propio espacio vertical. */
+    margin-bottom: 30px; /* Añade un margen inferior entre las tarjetas, separándoles visualmente para mayor claridad en pantallas pequeñas. */
+    text-align: justify; /* Justifica el texto dentro de las tarjetas para que se alinee uniformemente a ambos lados, mejorando la legibilidad. */
+  }
+
+  .card img {
+    margin-bottom: 10px; /* Añade un margen inferior a las imágenes dentro de las tarjetas para separar visualmente la imagen del texto en pantallas pequeñas. */
+    width: 100%; /* Hace que las imágenes dentro de las tarjetas ocupen todo el ancho disponible de su contenedor en pantallas pequeñas, adaptándose al espacio. */
+    display: inline; /* Hace que las imágenes se comporten como elementos en línea, alineadas con el contenido, en lugar de ocupar toda una línea. */
+    object-fit: cover; /* Asegura que las imágenes se escalen correctamente para llenar su contenedor manteniendo las proporciones, incluso si parte de la imagen se recorta. */
+  }
+}

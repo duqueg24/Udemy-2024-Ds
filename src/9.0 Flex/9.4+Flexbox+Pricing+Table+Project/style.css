@@ -1,0 +1,48 @@
+/* Hint: What can you do with a media query and flexbox? */
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.pricing-plan {
+  background-color: #fafafa;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+}
+
+.plan-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan-button {
+  padding: 10px 20px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.plan-button:hover {
+  background-color: rgb(250, 54, 0);
+}
