@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# Configuraciones de editores
+.vscode/
+.idea/
+
+# Archivos de dependencias específicos de Node
+package-lock.json
+
+# Archivos de log
+*.log
+
+# Ignorar cualquier archivo en Bootstrap Intro y otras carpetas temporales
+**/Bootstrap Intro/
+**/QR Code Project/
+**/Simon Game Challenge Starting Files/
+**/Simon Game Challenge Step 9 Answer/
+
+# Otros archivos y carpetas temporales
+**/node_modules/
+**/package-lock.json
+**/package.json
+**/bin/
