@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Blog</title>
+</head>
+<body>
+  <h1>Bienvenido al Blog</h1>
+  <a href="/new">Nueva publicación</a>
+  <div>
+    <% posts.forEach((post, index) => { %>
+      <div>
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+        <form action="/posts/delete" method="POST">
+          <input type="hidden" name="index" value="<%= index %>" />
+          <button type="submit">Eliminar</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

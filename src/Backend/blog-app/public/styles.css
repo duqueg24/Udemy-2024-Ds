@@ -1,0 +1,256 @@
+/* Reiniciar estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Encabezado principal */
+  h1 {
+    font-size: 3em;
+    color: #ff4b2b;
+    text-shadow: 0px 0px 10px #ff9068, 0px 0px 20px #ff4b2b;
+    margin: 20px;
+    text-align: center;
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0px 0px 10px #ff4b2b, 0px 0px 20px #ff9068;
+    }
+    to {
+      text-shadow: 0px 0px 20px #ff9068, 0px 0px 30px #ff4b2b;
+    }
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilo del formulario */
+  form {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+    border-radius: 20px; /* Bordes más redondeados */
+    padding: 25px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Mayor espaciado entre los campos */
+    width: 100%;
+    max-width: 600px; /* Ancho máximo del formulario */
+    transition: transform 0.3s ease-in-out; /* Suavizar transformaciones */
+  }
+  
+  /* Estilo de las etiquetas */
+  label {
+    font-size: 1.2em;
+    color: #ff4b2b;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Para darle un toque moderno */
+    font-weight: bold;
+  }
+  
+  /* Estilo de los campos de entrada (input y textarea) */
+  input[type="text"], textarea {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    border: 2px solid #ff4b2b;
+    color: #e0e0e0;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Cambios al enfocar los campos de texto */
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #ff9068; /* Color más brillante al enfocar */
+    box-shadow: 0 4px 20px rgba(255, 144, 104, 0.3);
+  }
+  
+  /* Estilo para el área de texto (textarea) */
+  textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+  /* Estilo para los botones dentro del formulario */
+  form button {
+    background: linear-gradient(135deg, #ff4b2b, #ff9068); /* Degradado */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none; /* Elimina bordes */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(255, 75, 43, 0.4);
+  }
+  
+  form button:hover {
+    background: linear-gradient(135deg, #ff9068, #ff4b2b);
+    box-shadow: 0 7px 25px rgba(255, 144, 104, 0.5);
+    transform: scale(1.05);
+  }
+  
+  form button:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 20px rgba(255, 144, 104, 0.3);
+  }
+  
+  /* Botón de eliminar con un fondo y borde coherente */
+  .delete-button {
+    background: #e63946;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    border: none; /* Eliminar borde */
+  }
+  
+  .delete-button:hover {
+    background-color: #ff4b2b;
+    transform: translateY(-2px);
+  }
+  
+  .delete-button:focus {
+    outline: none; /* Eliminar borde de enfoque */
+    border: none;
+  }
+  
+  /* Tarjetas flotantes para publicaciones */
+  .post {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff4b2b;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(255, 75, 43, 0.3);
+  }
+  
+  .post-title {
+    font-size: 1.8em;
+    color: #ff9068;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .post-content {
+    font-size: 1em;
+    color: #c0c0c0;
+    line-height: 1.6;
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Fondo decorativo para tarjetas */
+  .post::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 300%;
+    background: linear-gradient(120deg, transparent, rgba(255, 75, 43, 0.3), transparent);
+    transform: rotate(30deg);
+    transition: left 0.4s ease;
+    z-index: 1;
+  }
+  
+  .post:hover::before {
+    left: -50%;
+  }
+  
+  /* Enlaces */
+  a {
+    color: #ff4b2b; /* Color de texto de neón */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+  }
+  
+  a:hover {
+    color: #fff;
+    background-color: #ff4b2b; /* Fondo de neón en hover */
+    box-shadow: 0 7px 20px rgba(255, 75, 43, 0.6);
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff9068;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  /* Estilo responsivo */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    button, input[type="submit"], .delete-button {
+      padding: 10px 20px;
+      font-size: 0.9em;
+    }
+  
+    .post-title {
+      font-size: 1.5em;
+    }
+  }
+  
