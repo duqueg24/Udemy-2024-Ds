@@ -1,0 +1,232 @@
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0f172a, #1e293b);
+  color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+/* Animación de neón */
+.neon-text {
+  color: #63b3ed;
+  text-shadow: 
+      0 0 5px #63b3ed, 
+      0 0 10px #63b3ed, 
+      0 0 20px #63b3ed,
+      0 0 40px rgba(99, 179, 237, 0.6),
+      0 0 80px rgba(99, 179, 237, 0.4);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #63b3ed, 0 0 10px #63b3ed; }
+  100% { text-shadow: 0 0 20px #63b3ed, 0 0 40px rgba(99, 179, 237, 0.6); }
+}
+
+/* Encabezado */
+header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #63b3ed;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); color: #63b3ed; }
+  50% { transform: scale(1.05); color: #90cdf4; }
+}
+
+/* Contenedor Principal */
+main {
+  width: 80%; /* 80% del ancho */
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px); /* Altura completa, menos el header */
+}
+
+/* Menú Animado */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #63b3ed, #3182ce);
+}
+
+.menu-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Lista de Ingredientes */
+#ingredientsList {
+  list-style: none;
+  padding: 20px;
+  margin: 20px 0;
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#ingredientsList li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1), 
+              0 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#ingredientsList li:hover {
+  transform: translateX(10px);
+  background: rgba(99, 179, 237, 0.2);
+}
+
+/* Botones */
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 87, 34, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ff5722, #e91e63);
+  box-shadow: 0 6px 30px rgba(233, 30, 99, 0.7);
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #a0aec0;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animación General */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design: Ajustes para el iPhone X (375px de ancho) */
+@media (max-width: 375px) {
+  header h1 {
+      font-size: 1.8rem;
+  }
+
+  main {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .menu-item {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 12px;
+  }
+
+  .menu-item h3 {
+      font-size: 1.2rem;
+  }
+
+  #ingredientsList li {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+  }
+
+  button {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+  }
+
+  footer {
+      font-size: 0.8rem;
+  }
+}
+
+/* Ajustes para pantallas mayores (iPads, tablets y pantallas de escritorio) */
+@media (max-width: 1024px) {
+  main {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .menu-item {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+  }
+
+  button {
+      font-size: 1rem;
+  }
+
+  header h1 {
+      font-size: 2rem;
+  }
+}
