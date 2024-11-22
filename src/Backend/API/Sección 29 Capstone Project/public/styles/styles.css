@@ -1,0 +1,12 @@
+.bg-gradient-success {
+    background: linear-gradient(90deg, #28a745, #34d058);
+  }
+  
+  .bg-gradient-danger {
+    background: linear-gradient(90deg, #dc3545, #ff6f6f);
+  }
+  
+  .bg-gradient-secondary {
+    background: linear-gradient(90deg, #6c757d, #adb5bd);
+  }
+  
