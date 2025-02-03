@@ -1,0 +1,47 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.heading {
+  color: red;
+}
+
+ul {
+  color: white;
+}
+
+li {
+  list-style: none;
+  font-weight: bold;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+div {
+  display: flex;
+  gap: 15px; /* Espaciado entre imágenes */
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas si es necesario */
+  justify-content: center;
+}
+img {
+  width: 250px; /* Todas las imágenes tendrán el mismo ancho */
+  height: auto; /* Mantener la proporción original */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animación suave al interactuar */
+}
+img:hover {
+  transform: scale(1.05); /* Ampliación al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}

@@ -1,24 +1,36 @@
 <%- include('partials/header.ejs'); -%>
+<!-- Incluye el contenido del archivo 'header.ejs', que probablemente contiene la cabecera del HTML (como meta tags, links a estilos CSS, etc.). -->
 
 <div class="box" id="heading">
   <h1><%= listTitle %></h1>
 </div>
+<!-- Crea un contenedor con la clase 'box' y un ID 'heading', donde se muestra el título de la lista dinámica usando '<%= listTitle %>'. -->
+
 <div class="box">
   <% for(let item of listItems){%>
+  <!-- Itera sobre la colección 'listItems' para mostrar cada elemento de la lista dinámica. -->
+
   <div class="item">
+    <!-- Crea un contenedor para cada elemento de la lista con la clase 'item'. -->
+
     <form action="/delete" method="post">
+      <!-- Formulario para eliminar un elemento de la lista. Al seleccionar el checkbox, se envía automáticamente el formulario a la ruta '/delete'. -->
       <input
         type="checkbox"
         onchange="this.form.submit()"
         name="deleteItemId"
         value="<%= item.id %>"
       />
+      <!-- Checkbox vinculado al elemento mediante 'item.id'. Cuando se marca, el formulario se envía automáticamente. -->
     </form>
 
     <p id="title<%=item.id%>"><%= item.title %></p>
+    <!-- Muestra el título del elemento de la lista con un ID único basado en 'item.id'. -->
 
     <form class="edit" action="/edit" method="post">
+      <!-- Formulario para actualizar (editar) un elemento. -->
       <input type="hidden" name="updatedItemId" value="<%= item.id %>" />
+      <!-- Campo oculto que contiene el ID del elemento que se está editando. -->
       <input
         id="input<%=item.id%>"
         type="text"
@@ -28,6 +40,7 @@
         autofocus="true"
         hidden="true"
       />
+      <!-- Campo de texto para editar el título del elemento. Está oculto inicialmente. -->
       <button id="done<%=item.id%>" class="edit" type="submit" hidden>
         <img
           class="icon"
@@ -35,7 +48,9 @@
           alt="tick image"
         />
       </button>
+      <!-- Botón para confirmar los cambios, inicialmente oculto. Muestra un ícono de check. -->
     </form>
+
     <button
       id="edit<%=item.id%>"
       class="edit"
@@ -47,10 +62,13 @@
         alt="pencil image"
       />
     </button>
+    <!-- Botón para activar el modo de edición del elemento. Ejecuta la función 'handler' al hacer clic. -->
   </div>
   <% } %>
+  <!-- Finaliza el bucle 'for' para iterar sobre 'listItems'. -->
 
   <form class="item" action="/add" method="post">
+    <!-- Formulario para agregar un nuevo elemento a la lista. Se envía a la ruta '/add'. -->
     <input
       type="text"
       name="newItem"
@@ -58,18 +76,27 @@
       autocomplete="off"
       autofocus="true"
     />
+    <!-- Campo de texto para introducir el nombre del nuevo elemento. -->
     <button class="add" type="submit" name="list" value="<%" ="listTitle" %>
       >+
     </button>
+    <!-- Botón para enviar el formulario y agregar el nuevo elemento. -->
   </form>
 </div>
 
 <script>
   function handler(id) {
     document.getElementById("title" + id).setAttribute("hidden", true);
+    // Oculta el título actual del elemento en el modo de edición.
     document.getElementById("edit" + id).setAttribute("hidden", true);
+    // Oculta el botón de edición del elemento.
     document.getElementById("done" + id).removeAttribute("hidden");
+    // Muestra el botón para confirmar los cambios.
     document.getElementById("input" + id).removeAttribute("hidden");
+    // Muestra el campo de texto para editar el título del elemento.
   }
 </script>
+<!-- Script que gestiona el cambio de vista para el modo de edición de un elemento. -->
+
 <%- include('partials/footer.ejs'); -%>
+<!-- Incluye el contenido del archivo 'footer.ejs', que probablemente contiene el cierre de etiquetas del HTML y scripts comunes. -->

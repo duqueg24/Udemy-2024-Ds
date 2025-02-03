@@ -1,0 +1,27 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: #f4b319; /* Color amarillo similar al de Google Keep */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff; /* Color del texto en blanco */
+  font-weight: bold;
+  font-style: italic; /* Texto en cursiva */
+  font-family: "Arial", sans-serif; /* Fuente con cursiva suave */
+}
